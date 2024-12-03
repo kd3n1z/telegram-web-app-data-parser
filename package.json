@@ -1,6 +1,6 @@
 {
     "name": "telegram-web-app-data-parser",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Telegram Web App initData parsing & validation",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
@@ -21,6 +21,8 @@
     "keywords": [
         "telegram",
         "telegram web app",
+        "telegram web app data",
+        "telegram web app data parser",
         "telegram mini app",
         "parser",
         "validation"
