@@ -1,0 +1,38 @@
+{
+    "name": "telegram-web-app-data-parser",
+    "version": "0.1.0",
+    "description": "Telegram Web App initData parsing & validation",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "tsup",
+        "buildAndPublish": "npm run clean && npm run build && npm publish"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kd3n1z/telegram-web-app-data-parser.git"
+    },
+    "keywords": [
+        "telegram",
+        "telegram web app",
+        "telegram mini app",
+        "parser",
+        "validation"
+    ],
+    "author": "Denis Komarkov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kd3n1z/telegram-web-app-data-parser/issues"
+    },
+    "homepage": "https://github.com/kd3n1z/telegram-web-app-data-parser#readme",
+    "devDependencies": {
+        "@types/node": "^22.10.1",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2"
+    }
+}
