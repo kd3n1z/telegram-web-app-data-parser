@@ -5,13 +5,15 @@ function getHmacSha256Hash(key: Buffer | string, data: string) {
     return createHmac('sha256', key).update(data);
 };
 
+type ParseResult = {
+    validated: true,
+    data: WebAppInitData
+} | {
+    validated: false
+};
+
 type Parser = {
-    parse: (initData: string) => {
-        validated: true,
-        data: WebAppInitData
-    } | {
-        validated: false
-    }
+    parse: (initData: string) => ParseResult
 }
 
 export default function createParser(botToken: string): Parser {
@@ -52,9 +54,9 @@ export default function createParser(botToken: string): Parser {
                 };
             }
 
-            delete fields['hash'];
-
             // hash validation
+
+            delete fields['hash'];
 
             const dataCheckString = Object.entries(fields)
                 .sort((a, b) => a[0].localeCompare(b[0]))
