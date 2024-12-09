@@ -1,4 +1,4 @@
-import createParser from '../src/index';
+import { createParser } from '../src/index';
 
 describe('validation', () => {
     const parser = createParser('123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11');

@@ -16,7 +16,7 @@ type Parser = {
     parse: (initData: string) => ParseResult
 }
 
-export default function createParser(botToken: string): Parser {
+export function createParser(botToken: string): Parser {
     const secretToken = getHmacSha256Hash("WebAppData", botToken).digest();
 
     return {
