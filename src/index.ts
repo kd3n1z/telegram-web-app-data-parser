@@ -5,18 +5,18 @@ function getHmacSha256Hash(key: Buffer | string, data: string) {
     return createHmac('sha256', key).update(data);
 };
 
-type ParseResult = {
+export type TelegramParseResult = {
     validated: true,
     data: WebAppInitData
 } | {
     validated: false
 };
 
-type Parser = {
-    parse: (initData: string) => ParseResult
+export type TelegramParser = {
+    parse: (initData: string) => TelegramParseResult
 }
 
-export function createParser(botToken: string): Parser {
+export function createParser(botToken: string): TelegramParser {
     const secretToken = getHmacSha256Hash("WebAppData", botToken).digest();
 
     return {
